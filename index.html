@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>挠痒痒tk二次元 - 官方视频门户 | 治愈系二次元内容创作品牌</title>
+<meta name="description" content="挠痒痒tk二次元官方网站，专注治愈系二次元短视频创作与社区运营，汇聚原创动画、配音短剧、轻喜剧日常与创作者生态，打造值得信赖的二次元视频品牌。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ff7aa2'/%3E%3Ccircle cx='24' cy='27' r='4' fill='%23fff'/%3E%3Ccircle cx='40' cy='27' r='4' fill='%23fff'/%3E%3Cpath d='M22 40q10 9 20 0' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tk-pink:#ff7aa2;
+  --tk-pink-deep:#e6537f;
+  --tk-lilac:#b39ddb;
+  --tk-lilac-soft:#efe8fb;
+  --tk-ink:#2c2635;
+  --tk-ink-soft:#5c5468;
+  --tk-bg:#faf7fd;
+  --tk-card:#ffffff;
+  --tk-line:#e8def2;
+  --tk-mint:#7fd8c6;
+  --tk-amber:#ffc46b;
+  --tk-shadow:0 10px 30px rgba(120,90,160,.10);
+  --tk-radius:18px;
+  --tk-sticky-h:104px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--tk-sticky-h);}
+body{
+  margin:0;
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  background:var(--tk-bg);
+  color:var(--tk-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:800;}
+p{margin:0 0 1em;}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+ul,ol{margin:0 0 1em;padding-left:1.3em;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+.tk-wrap{width:min(1180px,92vw);margin:0 auto;}
+.tk-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* ============ 吸顶：公告条 + 页头 ============ */
+.tk-sticky-shell{position:sticky;top:0;z-index:120;}
+.tk-announce{
+  background:linear-gradient(90deg,var(--tk-pink-deep),var(--tk-lilac) 70%,var(--tk-pink));
+  color:#fff;font-size:13.5px;
+}
+.tk-announce-inner{
+  display:flex;align-items:center;gap:14px;
+  padding:8px 0;overflow:hidden;
+}
+.tk-announce-badge{
+  flex:none;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.55);
+  padding:1px 10px;border-radius:99px;font-weight:700;letter-spacing:.06em;font-size:12px;
+}
+.tk-announce-track{display:flex;gap:44px;white-space:nowrap;animation:tk-marquee 34s linear infinite;}
+.tk-announce-track span{opacity:.96;}
+@keyframes tk-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.tk-sticky-shell:hover .tk-announce-track{animation-play-state:paused;}
+
+.tk-header{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--tk-line);
+}
+.tk-header-inner{display:flex;align-items:center;gap:18px;padding:12px 0;}
+.tk-brand{display:flex;align-items:center;gap:10px;flex:none;}
+.tk-brand-mark{
+  width:42px;height:42px;border-radius:14px;flex:none;
+  background:linear-gradient(140deg,var(--tk-pink),var(--tk-lilac));
+  display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,122,162,.34);
+}
+.tk-brand-name{font-size:19px;font-weight:900;letter-spacing:.02em;line-height:1.15;}
+.tk-brand-sub{font-size:11px;color:var(--tk-ink-soft);letter-spacing:.24em;text-transform:uppercase;}
+.tk-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap;}
+.tk-nav a{
+  font-size:14.5px;font-weight:600;color:var(--tk-ink-soft);
+  padding:7px 12px;border-radius:10px;transition:.22s;
+}
+.tk-nav a:hover{background:var(--tk-lilac-soft);color:var(--tk-pink-deep);}
+.tk-search{
+  margin-left:auto;display:flex;align-items:center;gap:6px;
+  background:var(--tk-lilac-soft);border:1px solid var(--tk-line);
+  border-radius:999px;padding:5px 6px 5px 14px;min-width:216px;
+}
+.tk-search input{
+  border:none;background:transparent;outline:none;font-size:14px;width:100%;
+  color:var(--tk-ink);font-family:inherit;
+}
+.tk-search button{
+  flex:none;border-radius:999px;padding:6px 15px;font-size:13.5px;font-weight:700;
+  background:linear-gradient(120deg,var(--tk-pink),var(--tk-lilac));color:#fff;
+}
+.tk-search-hint{
+  font-size:12.5px;color:var(--tk-pink-deep);font-weight:600;
+  min-height:18px;padding:0 0 6px 4px;
+}
+.tk-burger{display:none;flex-direction:column;gap:5px;padding:10px;margin-left:auto;}
+.tk-burger span{width:22px;height:2.5px;border-radius:2px;background:var(--tk-ink);transition:.25s;}
+.tk-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.tk-burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.tk-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+/* 移动端导航 */
+.tk-mobile-panel{
+  display:none;background:#fff;border-bottom:1px solid var(--tk-line);
+  padding:10px 0 18px;
+}
+.tk-mobile-panel.open{display:block;}
+.tk-mobile-panel a{
+  display:block;padding:11px 6px;font-weight:600;color:var(--tk-ink-soft);
+  border-bottom:1px dashed var(--tk-line);
+}
+.tk-mobile-panel a:last-child{border-bottom:none;}
+
+/* ============ 通用区块 ============ */
+.tk-section{padding:64px 0;}
+.tk-section--tight{padding:44px 0;}
+.tk-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--tk-pink-deep);
+  background:#fff;border:1px solid var(--tk-line);border-radius:99px;
+  padding:4px 14px;margin-bottom:14px;
+}
+.tk-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tk-pink);}
+.tk-h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.01em;}
+.tk-lead{color:var(--tk-ink-soft);max-width:66ch;font-size:15.5px;}
+.tk-btn{
+  display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;
+  padding:11px 22px;border-radius:999px;transition:.22s;border:1px solid transparent;
+}
+.tk-btn--primary{background:linear-gradient(120deg,var(--tk-pink),var(--tk-lilac));color:#fff;box-shadow:0 8px 20px rgba(255,122,162,.3);}
+.tk-btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,122,162,.42);}
+.tk-btn--ghost{background:#fff;border-color:var(--tk-line);color:var(--tk-ink);}
+.tk-btn--ghost:hover{border-color:var(--tk-pink);color:var(--tk-pink-deep);}
+.tk-btn--sm{padding:7px 15px;font-size:13px;border-radius:999px;}
+.tk-grid{display:grid;gap:22px;minmax:0;}
+
+/* ============ 首屏：左文右侧大图 + 数据条 ============ */
+.tk-hero{padding:52px 0 26px;position:relative;overflow:hidden;}
+.tk-hero::before{
+  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(179,157,219,.34),transparent 68%);
+  top:-220px;right:-120px;pointer-events:none;
+}
+.tk-hero-grid{
+  display:grid;grid-template-columns:1fr 1.02fr;gap:52px;align-items:center;
+  position:relative;
+}
+.tk-hero-kicker{
+  font-size:12.5px;letter-spacing:.28em;font-weight:800;color:var(--tk-lilac);
+  text-transform:uppercase;margin-bottom:16px;
+}
+.tk-hero h1{
+  font-size:clamp(36px,5.2vw,60px);letter-spacing:-.02em;line-height:1.1;margin-bottom:18px;
+}
+.tk-hero h1 em{
+  font-style:normal;
+  background:linear-gradient(110deg,var(--tk-pink-deep),var(--tk-lilac));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.tk-hero-official{
+  display:inline-flex;align-items:center;gap:7px;background:#fff;border-radius:99px;
+  border:1px solid var(--tk-line);padding:4px 13px;font-size:12.5px;font-weight:700;
+  color:var(--tk-pink-deep);margin-bottom:18px;
+}
+.tk-hero-intro{font-size:15.8px;color:var(--tk-ink-soft);max-width:52ch;}
+.tk-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 30px;}
+.tk-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+  border-top:1px dashed var(--tk-line);padding-top:20px;
+}
+.tk-stat-num{
+  font-size:clamp(21px,2.6vw,26px);font-weight:900;letter-spacing:-.02em;
+  color:var(--tk-pink-deep);line-height:1.2;font-variant-numeric:tabular-nums;
+}
+.tk-stat-label{font-size:12.5px;color:var(--tk-ink-soft);font-weight:600;}
+.tk-hero-visual{position:relative;}
+.tk-hero-visual img{
+  width:100%;aspect-ratio:5/5.4;object-fit:cover;border-radius:26px;
+  box-shadow:0 24px 60px rgba(120,90,160,.24);
+}
+.tk-hero-float{
+  position:absolute;left:-18px;bottom:26px;background:#fff;border-radius:16px;
+  padding:12px 16px;box-shadow:var(--tk-shadow);display:flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;border:1px solid var(--tk-line);
+}
+.tk-hero-float .dot{width:9px;height:9px;border-radius:50%;background:var(--tk-mint);box-shadow:0 0 0 4px rgba(127,216,198,.24);}
+
+/* ============ 关键词解析长文 ============ */
+.tk-analysis{background:#fff;border-top:1px solid var(--tk-line);border-bottom:1px solid var(--tk-line);}
+.tk-analysis-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:48px;}
+.tk-analysis-side{position:sticky;top:calc(var(--tk-sticky-h) + 18px);align-self:start;}
+.tk-analysis-side .tk-mini-card{
+  background:var(--tk-lilac-soft);border-radius:var(--tk-radius);padding:18px 20px;margin-top:18px;
+}
+.tk-analysis-side .tk-mini-card b{color:var(--tk-pink-deep);}
+.tk-analysis-body p{color:var(--tk-ink-soft);font-size:15.4px;text-align:justify;}
+.tk-analysis-body h3{
+  font-size:19px;margin-top:1.5em;color:var(--tk-ink);
+  padding-left:14px;position:relative;
+}
+.tk-analysis-body h3::before{
+  content:"";position:absolute;left:0;top:.36em;width:6px;height:.92em;border-radius:3px;
+  background:linear-gradient(180deg,var(--tk-pink),var(--tk-lilac));
+}
+
+/* ============ 视频区：两列图文卡片 ============ */
+.tk-videos-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+.tk-video-card{
+  background:var(--tk-card);border-radius:var(--tk-radius);overflow:hidden;
+  border:1px solid var(--tk-line);box-shadow:var(--tk-shadow);display:flex;flex-direction:column;
+  transition:transform .26s, box-shadow .26s;
+}
+.tk-video-card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(120,90,160,.2);}
+.tk-video-thumb{position:relative;}
+.tk-video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.tk-video-play{
+  position:absolute;inset:auto auto 10px 10px;display:flex;align-items:center;gap:6px;
+  background:rgba(44,38,53,.72);color:#fff;font-size:12px;font-weight:700;
+  padding:4px 11px;border-radius:99px;backdrop-filter:blur(6px);
+}
+.tk-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.tk-video-body h3{font-size:16.5px;margin:0;}
+.tk-video-body .desc{font-size:13.8px;color:var(--tk-ink-soft);margin:0;flex:1;}
+.tk-tags{display:flex;gap:7px;flex-wrap:wrap;}
+.tk-tag{
+  font-size:11.5px;font-weight:700;color:var(--tk-pink-deep);
+  background:#fdeef4;border-radius:99px;padding:2px 10px;
+}
+.tk-tag--mint{color:#2f8c7c;background:#e6f8f4;}
+.tk-tag--lilac{color:#6d55a8;background:#f0eafc;}
+.tk-video-meta{
+  display:flex;align-items:center;gap:12px;font-size:12.4px;color:var(--tk-ink-soft);
+  border-top:1px dashed var(--tk-line);padding-top:11px;flex-wrap:wrap;
+}
+.tk-video-meta .author{font-weight:700;color:var(--tk-ink);}
+.tk-video-actions{display:flex;gap:8px;margin-left:auto;}
+.tk-act{
+  font-size:12px;font-weight:700;color:var(--tk-ink-soft);
+  border:1px solid var(--tk-line);border-radius:99px;padding:4px 10px;
+  display:inline-flex;align-items:center;gap:5px;transition:.2s;background:#fff;
+}
+.tk-act:hover{border-color:var(--tk-pink);color:var(--tk-pink-deep);}
+.tk-act.liked{background:#fdeef4;border-color:var(--tk-pink);color:var(--tk-pink-deep);}
+.tk-act.saved{background:#f0eafc;border-color:var(--tk-lilac);color:#6d55a8;}
+
+/* 文字列表条目 */
+.tk-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
+.tk-list-item{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;
+  background:#fff;border:1px solid var(--tk-line);border-radius:14px;padding:14px 18px;
+  transition:.22s;
+}
+.tk-list-item:hover{border-color:var(--tk-lilac);transform:translateX(3px);}
+.tk-list-item h3{font-size:15.5px;margin:0 0 3px;}
+.tk-list-item .desc{font-size:13.4px;color:var(--tk-ink-soft);margin:0;}
+.tk-list-item .side{font-size:12.4px;color:var(--tk-ink-soft);text-align:right;white-space:nowrap;}
+
+/* ============ 专题 ============ */
+.tk-feature{background:linear-gradient(180deg,#fff, #fbf6ff);}
+.tk-feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+.tk-feature-card{
+  background:#fff;border-radius:var(--tk-radius);border:1px solid var(--tk-line);
+  padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--tk-shadow);
+}
+.tk-feature-status{
+  align-self:flex-start;font-size:11.5px;font-weight:800;letter-spacing:.06em;
+  background:#e6f8f4;color:#2f8c7c;border-radius:99px;padding:2px 10px;
+}
+.tk-feature-status.soon{background:#fff4e3;color:#b97514;}
+.tk-feature-card h3{font-size:16.5px;margin:0;}
+.tk-feature-card p{font-size:13.6px;color:var(--tk-ink-soft);margin:0;}
+.tk-feature-card ol{margin:0;padding-left:1.15em;font-size:13.2px;color:var(--tk-ink-soft);}
+.tk-feature-card ol li{margin-bottom:5px;}
+
+/* ============ 作者区：双列简介 ============ */
+.tk-authors-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+.tk-author-card{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;
+  background:#fff;border:1px solid var(--tk-line);border-radius:var(--tk-radius);
+  padding:20px;box-shadow:var(--tk-shadow);transition:.24s;
+}
+.tk-author-card:hover{transform:translateY(-4px);border-color:var(--tk-lilac);}
+.tk-avatar{
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  font-weight:900;font-size:20px;color:#fff;flex:none;letter-spacing:.02em;
+}
+.tk-author-card h3{font-size:16px;margin:0 0 3px;}
+.tk-author-role{font-size:12.6px;color:var(--tk-pink-deep);font-weight:700;margin-bottom:6px;}
+.tk-author-nums{font-size:12.4px;color:var(--tk-ink-soft);margin-bottom:8px;}
+.tk-author-bio{font-size:13.4px;color:var(--tk-ink-soft);margin:0;}
+.tk-author-card .tk-btn{align-self:flex-start;margin-top:12px;grid-column:1/-1;justify-self:start;}
+
+/* ============ 评论：引用摘录 ============ */
+.tk-quotes{background:#fff;border-top:1px solid var(--tk-line);}
+.tk-quote-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+.tk-quote{
+  background:var(--tk-lilac-soft);border-radius:var(--tk-radius);padding:22px 24px;
+  position:relative;
+}
+.tk-quote::before{
+  content:"“";position:absolute;top:2px;left:16px;font-size:52px;line-height:1;
+  color:var(--tk-pink);opacity:.36;font-family:Georgia,serif;
+}
+.tk-quote p{font-size:14.2px;color:var(--tk-ink);margin:0 0 12px;position:relative;}
+.tk-quote cite{font-size:12.6px;font-style:normal;font-weight:700;color:var(--tk-ink-soft);}
+.tk-quote cite span{color:var(--tk-pink-deep);margin-left:6px;}
+.tk-quote--plain{background:#fff;border:1px solid var(--tk-line);}
+.tk-quote--plain::before{color:var(--tk-mint);}
+
+/* ============ 数据榜单 ============ */
+.tk-rank-cols{grid-template-columns:repeat(3,minmax(0,1fr));}
+.tk-rank{
+  background:#fff;border-radius:var(--tk-radius);border:1px solid var(--tk-line);
+  padding:20px;box-shadow:var(--tk-shadow);
+}
+.tk-rank h3{font-size:15.5px;display:flex;align-items:center;gap:8px;}
+.tk-rank h3 .pill{
+  font-size:11px;font-weight:800;background:#fdeef4;color:var(--tk-pink-deep);
+  border-radius:99px;padding:1px 9px;
+}
+.tk-rank ol{list-style:none;padding:0;margin:0;counter-reset:rk;}
+.tk-rank li{
+  counter-increment:rk;display:flex;gap:10px;align-items:baseline;
+  padding:9px 0;border-bottom:1px dashed var(--tk-line);font-size:13.6px;
+}
+.tk-rank li:last-child{border-bottom:none;}
+.tk-rank li::before{
+  content:counter(rk);flex:none;width:20px;height:20px;border-radius:7px;
+  display:grid;place-items:center;font-size:11.5px;font-weight:800;
+  background:var(--tk-lilac-soft);color:#6d55a8;transform:translateY(1px);
+}
+.tk-rank li:nth-child(1)::before{background:var(--tk-amber);color:#7a4a00;}
+.tk-rank li .n{font-weight:700;}
+.tk-rank li .v{margin-left:auto;color:var(--tk-ink-soft);font-size:12.4px;white-space:nowrap;}
+
+/* ============ 辅助：动态 / FAQ / 投稿 ============ */
+.tk-aux{background:#fff;border-top:1px solid var(--tk-line);}
+.tk-aux-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:44px;}
+.tk-news{list-style:none;padding:0;margin:0;display:grid;gap:14px;}
+.tk-news li{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;
+  padding-bottom:14px;border-bottom:1px dashed var(--tk-line);
+}
+.tk-news time{
+  font-size:12px;font-weight:800;color:var(--tk-pink-deep);white-space:nowrap;
+  background:#fdeef4;border-radius:8px;padding:2px 9px;height:fit-content;
+}
+.tk-news h3{font-size:15px;margin:0 0 3px;}
+.tk-news p{font-size:13.3px;color:var(--tk-ink-soft);margin:0;}
+details.tk-faq{
+  background:#fbf7ff;border:1px solid var(--tk-line);border-radius:12px;
+  padding:13px 16px;margin-bottom:10px;
+}
+details.tk-faq[open]{background:#fff;box-shadow:var(--tk-shadow);}
+details.tk-faq summary{
+  cursor:pointer;font-weight:700;font-size:14.4px;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+details.tk-faq summary::-webkit-details-marker{display:none;}
+details.tk-faq summary::after{
+  content:"+";flex:none;font-size:19px;font-weight:400;color:var(--tk-pink-deep);
+  transition:.2s;line-height:1;
+}
+details.tk-faq[open] summary::after{content:"−";}
+details.tk-faq p{font-size:13.6px;color:var(--tk-ink-soft);margin:10px 0 0;}
+
+.tk-partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.tk-partner-chip{
+  background:var(--tk-lilac-soft);border-radius:99px;padding:7px 16px;
+  font-size:13px;font-weight:700;color:#6d55a8;
+}
+
+/* ============ 页脚 ============ */
+.tk-footer{
+  background:linear-gradient(160deg,#2c2635,#3a3049);
+  color:#ded7e8;padding:56px 0 28px;margin-top:20px;
+}
+.tk-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px;}
+.tk-footer h4{font-size:13.5px;letter-spacing:.14em;color:#fff;margin-bottom:14px;text-transform:uppercase;}
+.tk-footer p,.tk-footer a,.tk-footer li{font-size:13.2px;color:#b9b0c8;line-height:1.9;}
+.tk-footer a:hover{color:var(--tk-pink);}
+.tk-footer ul{list-style:none;padding:0;margin:0;}
+.tk-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.tk-footer-brand .tk-brand-name{color:#fff;}
+.tk-footer-brand .tk-brand-sub{color:#9a8fae;}
+.tk-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.4px;color:#8f86a2;
+}
+
+/* ============ 交互元素 ============ */
+.tk-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:var(--tk-ink);color:#fff;font-size:13.5px;font-weight:600;
+  padding:11px 22px;border-radius:99px;box-shadow:0 14px 34px rgba(0,0,0,.28);
+  opacity:0;pointer-events:none;transition:.28s;z-index:400;
+}
+.tk-toast.show{opacity:1;transform:translate(-50%,0);}
+.tk-top{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:#fff;border:1px solid var(--tk-line);box-shadow:var(--tk-shadow);
+  display:grid;place-items:center;z-index:300;opacity:0;pointer-events:none;
+  transition:.28s;color:var(--tk-pink-deep);
+}
+.tk-top.show{opacity:1;pointer-events:auto;}
+.tk-top:hover{background:var(--tk-pink);color:#fff;border-color:var(--tk-pink);}
+
+.tk-modal{
+  position:fixed;inset:0;background:rgba(44,38,53,.55);z-index:500;
+  display:none;place-items:center;padding:20px;backdrop-filter:blur(3px);
+}
+.tk-modal.open{display:grid;}
+.tk-modal-box{
+  background:#fff;border-radius:22px;padding:28px;width:min(520px,100%);
+  max-height:86vh;overflow:auto;box-shadow:0 30px 70px rgba(0,0,0,.3);position:relative;
+}
+.tk-modal-box h3{font-size:20px;margin-bottom:10px;}
+.tk-modal-box p{font-size:14px;color:var(--tk-ink-soft);}
+.tk-modal-close{
+  position:absolute;top:14px;right:16px;font-size:22px;line-height:1;color:var(--tk-ink-soft);
+}
+.tk-modal-close:hover{color:var(--tk-pink-deep);}
+.tk-modal-box textarea,.tk-modal-box input{
+  width:100%;border:1px solid var(--tk-line);border-radius:12px;padding:10px 13px;
+  font-family:inherit;font-size:14px;margin-bottom:12px;outline:none;background:#fbf7ff;
+}
+.tk-modal-box textarea:focus,.tk-modal-box input:focus{border-color:var(--tk-pink);background:#fff;}
+.tk-modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:6px;}
+
+/* ============ 响应式 ============ */
+@media (max-width:1000px){
+  .tk-hero-grid,.tk-analysis-grid,.tk-aux-grid{grid-template-columns:1fr;gap:32px;}
+  .tk-analysis-side{position:static;}
+  .tk-feature-grid,.tk-rank-cols{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tk-footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:820px){
+  :root{--tk-sticky-h:96px;}
+  .tk-search{display:none;}
+  .tk-nav{display:none;}
+  .tk-burger{display:flex;}
+  .tk-videos-grid,.tk-authors-grid,.tk-quote-grid{grid-template-columns:1fr;}
+  .tk-feature-grid,.tk-rank-cols{grid-template-columns:1fr;}
+  .tk-section{padding:46px 0;}
+  .tk-hero{padding:32px 0 18px;}
+  .tk-hero-float{left:8px;bottom:12px;font-size:12px;}
+}
+@media (max-width:560px){
+  .tk-footer-grid{grid-template-columns:1fr;}
+  .tk-stats{grid-template-columns:1fr 1fr;}
+  .tk-list-item{grid-template-columns:1fr;}
+  .tk-list-item .side{text-align:left;}
+  .tk-announce-track{animation-duration:26s;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="tk-sticky-shell">
+  <div class="tk-announce" role="region" aria-label="站内公告">
+    <div class="tk-wrap tk-announce-inner">
+      <span class="tk-announce-badge">公告</span>
+      <div class="tk-announce-track" aria-hidden="true">
+        <span>《挠痒痒·冬日篇》第 12 集已上线，更新至 4K 高清版本</span>
+        <span>「轻喜剧创作挑战」报名通道开放，截止 12 月 8 日 24:00</span>
+        <span>创作者扶持计划第 5 期新增 30 个官方推荐位</span>
+        <span>《挠痒痒·冬日篇》第 12 集已上线，更新至 4K 高清版本</span>
+        <span>「轻喜剧创作挑战」报名通道开放，截止 12 月 8 日 24:00</span>
+        <span>创作者扶持计划第 5 期新增 30 个官方推荐位</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="tk-header">
+    <div class="tk-wrap tk-header-inner">
+      <a class="tk-brand" href="#tk-top-anchor" aria-label="挠痒痒tk二次元 官网首页">
+        <span class="tk-brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="9" cy="10" r="1.7" fill="#fff"/>
+            <circle cx="15" cy="10" r="1.7" fill="#fff"/>
+            <path d="M8 14.4q4 3.4 8 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <span class="tk-brand-name">挠痒痒tk二次元</span><br>
+          <span class="tk-brand-sub">Official Video Brand</span>
+        </span>
+      </a>
+
+      <nav class="tk-nav" aria-label="主导航">
+        <a href="#tk-focus">焦点内容</a>
+        <a href="#tk-analysis">品牌解析</a>
+        <a href="#tk-features">专题企划</a>
+        <a href="#tk-authors">创作者</a>
+        <a href="#tk-rank">口碑榜</a>
+        <a href="#tk-aux">帮助与动态</a>
+      </nav>
+
+      <form class="tk-search" id="tk-search-form" role="search" onsubmit="return false;">
+        <label class="tk-sr-only" for="tk-search-input">搜索站内内容</label>
+        <input id="tk-search-input" type="search" placeholder="搜索作品 / 创作者 / 专题" autocomplete="off">
+        <button type="submit" id="tk-search-btn">搜索</button>
+      </form>
+      <div class="tk-search-hint tk-wrap" id="tk-search-hint" aria-live="polite" style="display:none;"></div>
+
+      <button class="tk-burger" id="tk-burger" aria-expanded="false" aria-controls="tk-mobile-panel" aria-label="展开导航菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="tk-mobile-panel" id="tk-mobile-panel">
+      <div class="tk-wrap">
+        <a href="#tk-focus">焦点内容</a>
+        <a href="#tk-analysis">品牌解析</a>
+        <a href="#tk-features">专题企划</a>
+        <a href="#tk-authors">创作者</a>
+        <a href="#tk-rank">口碑榜</a>
+        <a href="#tk-aux">帮助与动态</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="tk-top-anchor">
+
+  <!-- S2 品牌首屏 -->
+  <section class="tk-hero" aria-labelledby="tk-hero-title">
+    <div class="tk-wrap tk-hero-grid">
+      <div>
+        <div class="tk-hero-kicker">Healing · Anime · Community</div>
+        <div class="tk-hero-official">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L12 15.9 6.4 19.1l1.4-6.3L3 8.5l6.4-.6z" fill="#e6537f"/></svg>
+          官方网站 · 官方发布
+        </div>
+        <h1 id="tk-hero-title">挠痒痒tk二次元<em>官方视频门户</em></h1>
+        <p class="tk-hero-intro">
+          作为深耕治愈系二次元内容的品牌，挠痒痒tk二次元以原创动画短剧、配音演绎与轻喜剧日常为核心，
+          为创作者搭建高品质内容生态。官网持续运营官方企划、精品内容与社区活动，
+          让每一份真实的快乐被记录、被分享、被陪伴。
+        </p>
+        <div class="tk-hero-actions">
+          <a class="tk-btn tk-btn--primary" href="#tk-focus">观看焦点内容</a>
+          <a class="tk-btn tk-btn--ghost" href="#tk-authors">认识创作者</a>
+          <button class="tk-btn tk-btn--ghost" type="button" data-tk-open="submit">投稿 / 报名</button>
+        </div>
+        <div class="tk-stats">
+          <div>
+            <div class="tk-stat-num" data-tk-count="1860">0</div>
+            <div class="tk-stat-label">原创视频作品（部）</div>
+          </div>
+          <div>
+            <div class="tk-stat-num" data-tk-count="42">0</div>
+            <div class="tk-stat-label">签约创作者（位）</div>
+          </div>
+          <div>
+            <div class="tk-stat-num" data-tk-count="386">0</div>
+            <div class="tk-stat-label">社区月活（万）</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tk-hero-visual">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 648'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd9e6'/%3E%3Cstop offset='.55' stop-color='%23e6dbff'/%3E%3Cstop offset='1' stop-color='%23c9f0e8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='648' fill='url(%23g1)'/%3E%3Ccircle cx='470' cy='120' r='150' fill='%23ffffff' opacity='.34'/%3E%3Ccircle cx='120' cy='540' r='190' fill='%23ff9fbd' opacity='.26'/%3E%3Cg%3E%3Ccircle cx='300' cy='268' r='132' fill='%23fff6fa'/%3E%3Ccircle cx='300' cy='268' r='132' fill='none' stroke='%23e6537f' stroke-width='5' opacity='.5'/%3E%3Ccircle cx='256' cy='248' r='17' fill='%232c2635'/%3E%3Ccircle cx='344' cy='248' r='17' fill='%232c2635'/%3E%3Ccircle cx='251' cy='242' r='6' fill='%23ffffff'/%3E%3Ccircle cx='339' cy='242' r='6' fill='%23ffffff'/%3E%3Cpath d='M258 306q42 34 84 0' stroke='%232c2635' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='222' cy='288' r='15' fill='%23ffb3c8' opacity='.8'/%3E%3Ccircle cx='378' cy='288' r='15' fill='%23ffb3c8' opacity='.8'/%3E%3C/g%3E%3Cg fill='%23e6537f' opacity='.72'%3E%3Cpath d='M300 440l14 34 36 4-27 24 8 35-31-18-31 18 8-35-27-24 36-4z'/%3E%3C/g%3E%3Ctext x='300' y='586' font-family='sans-serif' font-size='27' font-weight='700' fill='%235c5468' text-anchor='middle'%3E%E6%8C%A0%E7%97%92%E7%97%92%C2%B7%E6%B2%BB%E6%84%88%E7%B3%BB%E5%8E%9F%E5%88%9B%E5%8A%A8%E7%94%BB%3C/text%3E%3C/svg%3E"
+             alt="挠痒痒tk二次元官方主视觉：治愈系双马尾角色与星形徽章插画">
+        <div class="tk-hero-float">
+          <span class="dot" aria-hidden="true"></span>
+          <span>本周更新 6 部 · 官方同步播出</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容 + 热门视频流 -->
+  <section class="tk-section tk-section--tight" id="tk-focus" aria-labelledby="tk-focus-title">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Focus &amp; Feed</span>
+      <h2 class="tk-h2" id="tk-focus-title">焦点内容与本周热门：挠痒痒tk二次元的精品内容现场</h2>
+      <p class="tk-lead" style="margin-bottom:28px;">
+        官方每周精选焦点作品，并同步开放热门视频流，覆盖日常记录、创作幕后与治愈影像三类方向。
+        所有作品均为原版高清版本，可在线收藏、点赞与评论互动。
+      </p>
+
+      <div class="tk-grid tk-videos-grid">
+        <article class="tk-video-card">
+          <div class="tk-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23ffe3ee'/%3E%3Crect x='0' y='240' width='640' height='120' fill='%23ffc7dc'/%3E%3Ccircle cx='118' cy='120' r='62' fill='%23ffffff'/%3E%3Ccircle cx='100' cy='110' r='8' fill='%232c2635'/%3E%3Ccircle cx='136' cy='110' r='8' fill='%232c2635'/%3E%3Cpath d='M100 138q18 14 36 0' stroke='%232c2635' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='240' y='96' width='330' height='148' rx='16' fill='%23ffffff' opacity='.86'/%3E%3Crect x='266' y='124' width='180' height='13' rx='6' fill='%23e6537f' opacity='.62'/%3E%3Crect x='266' y='152' width='250' height='10' rx='5' fill='%23b39ddb' opacity='.8'/%3E%3Crect x='266' y='176' width='212' height='10' rx='5' fill='%23b39ddb' opacity='.6'/%3E%3Crect x='266' y='200' width='140' height='10' rx='5' fill='%23b39ddb' opacity='.45'/%3E%3C/svg%3E"
+                 alt="焦点作品《冬日挠痒痒手账》封面：雪地场景与手账卡片插画">
+            <span class="tk-video-play" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="#fff"/></svg>
+              4K 高清
+            </span>
+          </div>
+          <div class="tk-video-body">
+            <div class="tk-tags">
+              <span class="tk-tag">焦点推荐</span>
+              <span class="tk-tag tk-tag--mint">治愈影像</span>
+              <span class="tk-tag tk-tag--lilac">原创动画</span>
+            </div>
+            <h3>《冬日挠痒痒手账》第 12 集：把整个冬天揉成一团棉花</h3>
+            <p class="desc">
+              本集围绕“冬日里最想被抱住的一刻”展开，用定格动画与手绘分镜交替叙事，
+              记录三位主角在雪夜里互相挠痒痒打闹的小事件。附官方分镜稿与配乐制作说明。
+            </p>
+            <div class="tk-video-meta">
+              <span class="author">@雪团工作室</span>
+              <span>播放 128.6万</span>
+              <span class="tk-like-num" data-tk-like="2.4万">👍 2.4万</span>
+              <div class="tk-video-actions">
+                <button class="tk-act tk-like-btn" type="button" aria-pressed="false">点赞</button>
+                <button class="tk-act tk-save-btn" type="button" aria-pressed="false">收藏</button>
+                <button class="tk-act tk-copy-btn" type="button" data-tk-copy="冬日挠痒痒手账 第12集">分享</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tk-video-card">
+          <div class="tk-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23e7e1ff'/%3E%3Cg stroke='%23b39ddb' stroke-width='3' opacity='.7'%3E%3Cpath d='M0 300q160-90 320 0t320 0' fill='none'/%3E%3Cpath d='M0 250q160-80 320 0t320 0' fill='none'/%3E%3C/g%3E%3Ccircle cx='480' cy='96' r='48' fill='%23ffc46b'/%3E%3Crect x='60' y='86' width='230' height='150' rx='18' fill='%23ffffff'/%3E%3Crect x='86' y='112' width='120' height='12' rx='6' fill='%236d55a8'/%3E%3Crect x='86' y='140' width='176' height='9' rx='4.5' fill='%23b39ddb'/%3E%3Crect x='86' y='162' width='150' height='9' rx='4.5' fill='%23b39ddb' opacity='.7'/%3E%3Crect x='86' y='184' width='96' height='9' rx='4.5' fill='%23b39ddb' opacity='.5'/%3E%3C/svg%3E"
+                 alt="作品《用一支笔画出挠痒痒瞬间》封面：紫色渐变背景与画板插画">
+            <span class="tk-video-play" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="#fff"/></svg>
+              创作幕后
+            </span>
+          </div>
+          <div class="tk-video-body">
+            <div class="tk-tags">
+              <span class="tk-tag">创作幕后</span>
+              <span class="tk-tag tk-tag--lilac">教程干货</span>
+            </div>
+            <h3>用一支笔画出“挠痒痒瞬间”：动画分镜的 6 个节奏点</h3>
+            <p class="desc">
+              从草图到关键帧，拆解二次元轻喜剧中“痒感”表现的节奏技巧，附可下载的分镜模板与
+              3 段对比演示，适合刚开始做原创短剧的创作者。
+            </p>
+            <div class="tk-video-meta">
+              <span class="author">@分镜小林</span>
+              <span>播放 76.3万</span>
+              <span class="tk-like-num" data-tk-like="1.1万">👍 1.1万</span>
+              <div class="tk-video-actions">
+                <button class="tk-act tk-like-btn" type="button" aria-pressed="false">点赞</button>
+                <button class="tk-act tk-save-btn" type="button" aria-pressed="false">收藏</button>
+                <button class="tk-act tk-copy-btn" type="button" data-tk-copy="用一支笔画出挠痒痒瞬间">分享</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="margin-top:38px;font-size:18px;">热门视频流 · 文字索引</h3>
+      <ul class="tk-list">
+        <li class="tk-list-item">
+          <div>
+            <h3>《配音室的一天》：三个声线如何演完一场打闹</h3>
+            <p class="desc">点击进入官方配音花絮，含 2 条未剪入正片的即兴录音。</p>
+          </div>
+          <div class="side">配音演绎 · 52.4万播放</div>
+        </li>
+        <li class="tk-list-item">
+          <div>
+            <h3>《痒痒小剧场》第 8 期：便利店里的三分钟和解</h3>
+            <p class="desc">轻喜剧日常系列，全程一镜到底，讲述一次尴尬又温柔的相遇。</p>
+          </div>
+          <div class="side">轻喜剧日常 · 44.9万播放</div>
+        </li>
+        <li class="tk-list-item">
+          <div>
+            <h3>《画到凌晨三点》：创作者的深夜工作台</h3>
+            <p class="desc">创作幕后纪录短片，镜头跟随一位连载作者完成第 200 张原画。</p>
+          </div>
+          <div class="side">创作幕后 · 39.1万播放</div>
+        </li>
+        <li class="tk-list-item">
+          <div>
+            <h3>《给小朋友讲痒痒》：一次线下公益放映记录</h3>
+            <p class="desc">品牌社会责任项目现场，记录社区放映与互动问答的完整片段。</p>
+          </div>
+          <div class="side">公益记录 · 27.6万播放</div>
+        </li>
+        <li class="tk-list-item">
+          <div>
+            <h3>《挠痒痒音效库》第 3 弹：12 种真实录音素材</h3>
+            <p class="desc">官方开放音效素材下载，可授权用于非商业二创作品。</p>
+          </div>
+          <div class="side">实用技巧 · 21.8万播放</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 关键词深度解析 -->
+  <section class="tk-section tk-analysis" id="tk-analysis" aria-labelledby="tk-analysis-title">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Brand Insight</span>
+      <h2 class="tk-h2" id="tk-analysis-title">挠痒痒tk二次元品牌深度解析：一个治愈系内容品牌如何持续生长</h2>
+      <div class="tk-analysis-grid">
+        <aside class="tk-analysis-side">
+          <p class="tk-lead" style="font-size:14.6px;">
+            从一部三分钟原创短剧起步，挠痒痒tk二次元用五年时间，把“痒”这个极其微小的身体感受，
+            做成了一个可以被反复讲述、被社区共同维护的内容母题。
+          </p>
+          <div class="tk-mini-card">
+            <p style="margin:0 0 8px;"><b>内容母题</b>：挠痒痒、打闹、和解、陪伴</p>
+            <p style="margin:0 0 8px;"><b>主要形态</b>：原创动画短剧、配音演绎、轻喜剧日常</p>
+            <p style="margin:0;"><b>运营原则</b>：原创、正版、高清、持续运营</p>
+          </div>
+        </aside>
+
+        <div class="tk-analysis-body">
+          <p>
+            很多观众第一次接触挠痒痒tk二次元，是从一部只有两分半钟的原创短剧开始的。画面里两个角色因为一支笔
+            互相挠痒痒，笑着笑着就笑出了眼泪。评论区有人说，这不像动画，更像自己小时候和同桌的某个下午。
+            正是这种把日常小事放到极高完成度里的做法，让挠痒痒tk二次元在二次元内容高度饱和的当下，找到了自己的位置：
+            它不追逐宏大世界观，而是专注一种具体的、可被身体记住的情绪——痒、笑、和解、被陪伴。
+          </p>
+
+          <h3>一、品牌定位：把“轻”做到极致的内容生态</h3>
+          <p>
+            作为一家以视频为核心的二次元内容品牌，挠痒痒tk二次元并没有把自己定位成单纯的“动画工作室”。
+            官网首页承担的功能，是让观众、创作者与合作方同时看到一个完整的运营体系：官方企划有排期，
+            创作者有清晰的成长路径，社区有稳定的互动节奏。品牌将内容分为三条主线——原创动画短剧、
+            配音演绎与轻喜剧日常，三条线共享同一套角色设定与视觉语言，又各自有不同的更新节奏。
+            这样一来，观众在任何一条线上进入，都能顺势理解整个内容生态；而创作者也能据此判断自己适合从哪一类作品起步。
+          </p>
+          <p>
+            在视觉上，品牌选择了柔粉与浅紫作为主色，配合大量留白与圆角卡片，刻意降低信息的攻击性。
+            这种设计不是审美偏好，而是内容调性的延伸：当作品本身讲的是“被轻轻挠一下”的温柔感受，
+            页面如果做成强烈的视觉冲击，反而会造成割裂。所以这里的每一个按钮、每一行数据、每一张封面，
+            都在为“治愈影像”这四个字服务。企业内部的视觉规范里甚至有一条明确要求：任何官方物料中，
+            角色表情不得出现真实伤害或惊吓，所有冲突都必须以和解收尾。
+          </p>
+
+          <h3>二、内容方法：从“痒”出发的选题与制作流程</h3>
+          <p>
+            选题会上，挠痒痒tk二次元的制作团队有一个固定动作：每个人说一件最近让自己“想笑又不好意思笑”的小事。
+            这个动作看似随意，实际是品牌方法论的起点。因为“痒”本身就带有一种压抑不住、又想忍住的矛盾感，
+            它天然适合轻喜剧的表达。团队会把这些小事拆成情绪节点，再决定用哪种形式呈现：
+            如果适合静默叙事，就做成无台词动画；如果台词本身够好笑，就转为配音演绎；如果是现实中发生的，
+            就拍成轻喜剧日常。选题之后，脚本会经过三轮内部审阅，分别检查节奏、角色一致性与情绪落点，
+            确保每一部作品都能在结束前把观众的情绪稳稳放下。
+          </p>
+          <p>
+            制作流程上，官方坚持“完整分镜先行”的原则。分镜不仅用于内部沟通，也会在部分作品的幕后内容中公开，
+            让社区看到一部三分钟短剧背后往往有超过一百张分镜草图。这种做法一方面提升了创作的透明度，
+            另一方面也为新人创作者提供了可学习的样本。官方每年公开的分镜模板、音效素材与配乐说明，
+            累计下载量已经超过四十万次，成为品牌影响力的重要组成部分。
+          </p>
+
+          <h3>三、社区运营：创作者与观众共同维护的互动秩序</h3>
+          <p>
+            挠痒痒tk二次元把社区看成内容生态的第二个引擎。官网设有明确的创作者矩阵，每位签约创作者都有独立档案，
+            包含擅长领域、作品数与持续更新中的企划，观众点开即可跳转作品列表。官方每个月会公布一次“创作灵感清单”，
+            列出近期适合二创的选题方向与可用素材，并明确标注授权范围。这一机制让二创作品保持了稳定的数量与质量，
+            也让观众在欣赏原作之外，有了参与感。社区评论区采用轻量化的短评与引用摘录形式，避免情绪化对骂，
+            同时保留真实的反馈声音，包括针对节奏、配音和字幕的批评。
+          </p>
+          <p>
+            为了维持互动秩序，官方在社区规则中强调三条底线：不攻击创作者本人、不搬运未授权内容、不制造角色对立。
+            违反规则的内容会被移入观察区，而非直接删除，以免误伤。品牌认为，包容与真实是社区长期运营的前提，
+            温暖和力量只有在规则清晰的环境里才可能持续。这种偏“慢”的运营策略，也解释了为什么官网的信任度一直在上升：
+            观众知道这里不会用夸张的手法和他们打交道。
+          </p>
+
+          <h3>四、品牌生长：从作品到企划，从社区到影响力</h3>
+          <p>
+            如果把挠痒痒tk二次元看作一个持续生长的内容品牌，可以清楚看到三个阶段的痕迹。第一阶段是作品驱动，
+            靠单部短剧的口碑积累第一批观众；第二阶段是企划驱动，推出季度专题与创作挑战，把分散的作品串成有主题的序列；
+            第三阶段是生态驱动，创作者、观众、合作方在同一套规则下互动，官网成为对外统一的信息入口。
+            这三个阶段并不是替代关系，而是叠加关系，今天的一部新作依然可能成为某位观众的第一部作品。
+            正因为如此，品牌在官网页脚写下的不是一句口号，而是一句陈述：官方网站，持续运营中。
+          </p>
+          <p>
+            在更宏观的层面，品牌也把社会责任放进了内容规划。每年寒暑假，官方会组织线下公益放映，
+            把治愈系内容带进社区与儿童活动空间，并公开活动记录。这些内容并不追求播放量，
+            但它们让“陪伴”这个词有了具体所指。合作方在选择与挠痒痒tk二次元合作时，看中的往往不只是播放数据，
+            而是这种稳定、值得信赖的品牌气质——它意味着内容不会突然走偏，社区不会突然失控，合作可以按部就班地推进。
+            对一家内容品牌来说，这或许比任何单部爆款都更难得。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题 / 企划 -->
+  <section class="tk-section tk-feature" id="tk-features" aria-labelledby="tk-features-title">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Programs</span>
+      <h2 class="tk-h2" id="tk-features-title">官方专题与企划：挠痒痒tk二次元的季度内容计划</h2>
+      <p class="tk-lead" style="margin-bottom:28px;">
+        每个专题由官方统一策划、统一排期，并在官网公布更新状态。观众可以按专题追更，创作者可以按专题投稿。
+      </p>
+      <div class="tk-grid tk-feature-grid">
+        <article class="tk-feature-card">
+          <span class="tk-feature-status">连载中 · 每周五更新</span>
+          <h3>专题一：《冬日挠痒痒手账》</h3>
+          <p>以“冬天最想被抱住的一刻”为主题，12 集原创动画短剧，配合官方手账页与线下周边。</p>
+          <ol>
+            <li>第 10 集：雪夜里的一次倒地大笑（已上线）</li>
+            <li>第 11 集：围巾与手套的争夺战（已上线）</li>
+            <li>第 12 集：把整个冬天揉成一团棉花（已上线）</li>
+          </ol>
+        </article>
+        <article class="tk-feature-card">
+          <span class="tk-feature-status">征稿中 · 截止 12 月 8 日</span>
+          <h3>专题二：「轻喜剧创作挑战」</h3>
+          <p>面向全站创作者开放，主题限定为“一次没有恶意的打闹”，官方提供分镜模板与音效素材。</p>
+          <ol>
+            <li>报名与选题提交（开放中）</li>
+            <li>作品上传与初审（12 月中旬）</li>
+            <li>官方推荐位公布与展映（12 月下旬）</li>
+          </ol>
+        </article>
+        <article class="tk-feature-card">
+          <span class="tk-feature-status soon">筹备中 · 次年 1 月上线</span>
+          <h3>专题三：《配音室里的十二种笑》</h3>
+          <p>纪录式专题，追踪三位配音演员如何用同一句台词表达十二种笑意，含完整录音对比。</p>
+          <ol>
+            <li>第一辑：气声与短促笑</li>
+            <li>第二辑：忍住不笑的三种处理方法</li>
+            <li>第三辑：一场打闹的完整声场搭建</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵 -->
+  <section class="tk-section" id="tk-authors" aria-labelledby="tk-authors-title">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Creators</span>
+      <h2 class="tk-h2" id="tk-authors-title">创作者矩阵：与挠痒痒tk二次元一起持续运营的人</h2>
+      <p class="tk-lead" style="margin-bottom:28px;">
+        每位创作者都在官网拥有独立档案。点击档案可查看擅长领域、作品数量与近期企划。
+      </p>
+      <div class="tk-grid tk-authors-grid">
+        <article class="tk-author-card">
+          <div class="tk-avatar" style="background:linear-gradient(135deg,#ff7aa2,#b39ddb);">雪</div>
+          <div>
+            <h3>雪团工作室</h3>
+            <div class="tk-author-role">原创动画 · 定格与手绘结合</div>
+            <div class="tk-author-nums">作品 214 部 · 粉丝 86.4 万</div>
+            <p class="tk-author-bio">
+              主理人雪团，动画导演出身，擅长把极小的日常动作拆解成完整的情绪段落。
+              自 2021 年加入品牌后，主导《冬日挠痒痒手账》全季制作，坚持手工上色与实拍材质混用，
+              作品节奏偏慢，但复看率在站内长期领先。她常说，好的治愈影像不是让人忘掉烦恼，而是让人愿意再撑一会儿。
+            </p>
+            <button class="tk-act" type="button" data-tk-author="雪团工作室|原创动画导演，主导《冬日挠痒痒手账》全季，坚持手工上色与实拍材质混用，作品复看率长期领先。">查看档案</button>
+          </div>
+        </article>
+
+        <article class="tk-author-card">
+          <div class="tk-avatar" style="background:linear-gradient(135deg,#7fd8c6,#6d55a8);">林</div>
+          <div>
+            <h3>分镜小林</h3>
+            <div class="tk-author-role">分镜教学 · 节奏设计</div>
+            <div class="tk-author-nums">作品 148 部 · 粉丝 63.1 万</div>
+            <p class="tk-author-bio">
+              分镜师与教程作者，长期为品牌提供分镜模板与节奏诊断服务。他的视频以“拆解”见长，
+              会把一部三分钟短剧切成二十个节奏点逐一讲解，配合可下载的模板文件。
+              他认为创作的门槛不在工具，而在于是否愿意反复修改同一个镜头。
+            </p>
+            <button class="tk-act" type="button" data-tk-author="分镜小林|分镜师与教程作者，提供分镜模板与节奏诊断，擅长把短剧拆解成可学习的节奏节点。">查看档案</button>
+          </div>
+        </article>
+
+        <article class="tk-author-card">
+          <div class="tk-avatar" style="background:linear-gradient(135deg,#ffc46b,#e6537f);">声</div>
+          <div>
+            <h3>声线阿墨</h3>
+            <div class="tk-author-role">配音演绎 · 多声线切换</div>
+            <div class="tk-author-nums">作品 96 部 · 粉丝 51.7 万</div>
+            <p class="tk-author-bio">
+              配音演员，擅长在一条短剧里完成三个以上声线的自然切换。她在品牌内负责配音室的日常运营，
+              开设了面向新人的“声线开放课”，每期只收十人。
+              她相信声音的真诚度比技巧更难训练，因此反复强调“先理解角色为什么想笑”。
+            </p>
+            <button class="tk-act" type="button" data-tk-author="声线阿墨|配音演员，擅长多声线切换，负责配音室运营与新人声线开放课。">查看档案</button>
+          </div>
+        </article>
+
+        <article class="tk-author-card">
+          <div class="tk-avatar" style="background:linear-gradient(135deg,#b39ddb,#2c2635);">夜</div>
+          <div>
+            <h3>夜班剪辑台</h3>
+            <div class="tk-author-role">轻喜剧日常 · 一镜到底</div>
+            <div class="tk-author-nums">作品 132 部 · 粉丝 44.2 万</div>
+            <p class="tk-author-bio">
+              独立剪辑师，专注轻喜剧日常影像，偏爱一镜到底与长镜头调度。他习惯在真实场景里布景，
+              便利店、地铁口与小区长椅都是常用场地。他的作品画面朴素，但对话密度极高，
+              被观众评价为“笑着笑着就沉默了”。
+            </p>
+            <button class="tk-act" type="button" data-tk-author="夜班剪辑台|独立剪辑师，专注轻喜剧日常与一镜到底，作品对话密度高，场景生活化。">查看档案</button>
+          </div>
+        </article>
+
+        <article class="tk-author-card">
+          <div class="tk-avatar" style="background:linear-gradient(135deg,#e6537f,#7fd8c6);">音</div>
+          <div>
+            <h3>音效小满</h3>
+            <div class="tk-author-role">音效设计 · 素材开放</div>
+            <div class="tk-author-nums">作品 78 部 · 粉丝 35.9 万</div>
+            <p class="tk-author-bio">
+              音效设计师，负责品牌音效素材库的整理与开放。她采集了大量真实的布料摩擦、笑声与脚步声，
+              并按照情绪类型进行分类，供创作者授权使用。她认为音效是治愈影像里最容易被忽略、
+              却最能决定“痒感”的部分。
+            </p>
+            <button class="tk-act" type="button" data-tk-author="音效小满|音效设计师，负责音效素材库整理与开放，采集真实布料摩擦、笑声与脚步声。">查看档案</button>
+          </div>
+        </article>
+
+        <article class="tk-author-card">
+          <div class="tk-avatar" style="background:linear-gradient(135deg,#ff9fbd,#b39ddb);">青</div>
+          <div>
+            <h3>青色字幕组</h3>
+            <div class="tk-author-role">字幕翻译 · 无障碍优化</div>
+            <div class="tk-author-nums">作品 61 部 · 粉丝 22.3 万</div>
+            <p class="tk-author-bio">
+              由五位成员组成的字幕与无障碍小组，负责品牌作品的字幕校对、听障友好版本与多语种翻译。
+              他们推动建立了官方字幕规范，要求所有笑声与气声标注明确，
+              让无法听到声音的观众也能完整理解作品情绪。
+            </p>
+            <button class="tk-act" type="button" data-tk-author="青色字幕组|字幕与无障碍小组，负责字幕校对、听障友好版本与多语种翻译，推动官方字幕规范建立。">查看档案</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 数据榜单 -->
+  <section class="tk-section" id="tk-rank" aria-labelledby="tk-rank-title" style="padding-top:24px;">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Rankings</span>
+      <h2 class="tk-h2" id="tk-rank-title">口碑与热度：挠痒痒tk二次元本季度内容榜单</h2>
+      <p class="tk-lead" style="margin-bottom:28px;">
+        榜单数据由站内播放、收藏、评论与完播率综合计算，每两周更新一次，仅统计原创正版内容。
+      </p>
+      <div class="tk-grid tk-rank-cols">
+        <div class="tk-rank">
+          <h3>热度榜 <span class="pill">近 14 天</span></h3>
+          <ol>
+            <li><span class="n">冬日挠痒痒手账 第12集</span><span class="v">128.6万</span></li>
+            <li><span class="n">配音室的一天</span><span class="v">52.4万</span></li>
+            <li><span class="n">痒痒小剧场 第8期</span><span class="v">44.9万</span></li>
+            <li><span class="n">画到凌晨三点</span><span class="v">39.1万</span></li>
+            <li><span class="n">挠痒痒音效库 第3弹</span><span class="v">21.8万</span></li>
+          </ol>
+        </div>
+        <div class="tk-rank">
+          <h3>新人榜 <span class="pill">本季度</span></h3>
+          <ol>
+            <li><span class="n">折叠椅动画</span><span class="v">新人第 1</span></li>
+            <li><span class="n">小声说台词</span><span class="v">新人第 2</span></li>
+            <li><span class="n">铅笔芯工作室</span><span class="v">新人第 3</span></li>
+            <li><span class="n">午后三点的猫</span><span class="v">新人第 4</span></li>
+            <li><span class="n">纸上分镜社</span><span class="v">新人第 5</span></li>
+          </ol>
+        </div>
+        <div class="tk-rank">
+          <h3>口碑榜 <span class="pill">满分 10.0</span></h3>
+          <ol>
+            <li><span class="n">冬日挠痒痒手账</span><span class="v">9.6</span></li>
+            <li><span class="n">配音室里的十二种笑</span><span class="v">9.4</span></li>
+            <li><span class="n">画到凌晨三点</span><span class="v">9.2</span></li>
+            <li><span class="n">痒痒小剧场</span><span class="v">9.0</span></li>
+            <li><span class="n">挠痒痒音效库</span><span class="v">8.8</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="tk-section tk-quotes" aria-labelledby="tk-quotes-title">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Community Voices</span>
+      <h2 class="tk-h2" id="tk-quotes-title">观众怎么说：来自挠痒痒tk二次元社区的真实评价</h2>
+      <p class="tk-lead" style="margin-bottom:28px;">
+        以下短评来自站内评论区的公开内容，保留了完整语气，包括批评与建议。
+      </p>
+      <div class="tk-grid tk-quote-grid">
+        <blockquote class="tk-quote">
+          <p>看完第 12 集，我把手账翻出来重新写了一遍。这部片子最厉害的地方是它不催你振作，只让你先坐下来。</p>
+          <cite>@纸飞机不飞 <span>追更 2 年</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote tk-quote--plain">
+          <p>分镜教程我反复看了三遍，附带的模板真的很实用。唯一的建议是希望加一节讲怎么处理没有台词的段落。</p>
+          <cite>@折叠椅动画 <span>新人创作者</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote tk-quote--plain">
+          <p>音效素材库开放这件事，对独立创作者太友好了。我上个月的作品就用了里面的布料摩擦声，效果比我自己录的好太多。</p>
+          <cite>@铅笔芯工作室 <span>二创作者</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote">
+          <p>配音室那期让我第一次意识到，笑声是需要设计的。阿墨老师那句“先理解角色为什么想笑”，我记在本子上了。</p>
+          <cite>@小声说台词 <span>配音新人</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote">
+          <p>作为家长，我很放心让孩子看这个品牌的内容。没有恶意玩笑，打闹之后一定会和好，这点很难得。</p>
+          <cite>@周末陪看 <span>普通观众</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote tk-quote--plain">
+          <p>提个批评：第 10 集结尾稍显仓促，情绪刚起来就结束了。希望后续能多给一点收尾的留白。</p>
+          <cite>@镜头往后拉 <span>老观众</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote tk-quote--plain">
+          <p>公益放映的现场记录看哭了。品牌愿意把预算花在这种不涨粉的内容上，说明它真的在乎陪伴这件事。</p>
+          <cite>@南边有风 <span>社区志愿者</span></cite>
+        </blockquote>
+        <blockquote class="tk-quote">
+          <p>字幕组做的听障友好版本很用心，笑声和气声都标出来了，我弟弟第一次能完整看完一部短剧。</p>
+          <cite>@小青柠 <span>长期观众</span></cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 辅助区：企业动态 + FAQ + 合作 -->
+  <section class="tk-section tk-aux" id="tk-aux" aria-labelledby="tk-aux-title">
+    <div class="tk-wrap">
+      <span class="tk-eyebrow">Updates &amp; Help</span>
+      <h2 class="tk-h2" id="tk-aux-title">企业动态与常见问题：与挠痒痒tk二次元保持同步</h2>
+      <div class="tk-grid tk-aux-grid">
+        <div>
+          <h3 style="font-size:18px;">企业动态</h3>
+          <ul class="tk-news">
+            <li>
+              <time datetime="2026-11-19">11-19</time>
+              <div>
+                <h3>《冬日挠痒痒手账》全季上线，官方发布 4K 修复版</h3>
+                <p>全 12 集完成画质修复，并补充官方分镜稿与配乐说明，已在站内开放观看。</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-11-12">11-12</time>
+              <div>
+                <h3>「轻喜剧创作挑战」报名开启，新增 30 个官方推荐位</h3>
+                <p>报名截至 12 月 8 日，官方提供分镜模板、音效素材与创作答疑直播。</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-11-05">11-05</time>
+              <div>
+                <h3>品牌与三家在地文化空间达成联合放映合作</h3>
+                <p>合作将持续到次年春季，每季度安排两场公益放映与创作者见面会。</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-10-28">10-28</time>
+              <div>
+                <h3>音效素材库更新第 3 弹，新增 12 种真实录音</h3>
+                <p>素材开放非商业授权下载，需在作品中标注来源，具体规则见官网说明。</p>
+              </div>
+            </li>
+          </ul>
+
+          <h3 style="font-size:18px;margin-top:30px;">合作伙伴</h3>
+          <div class="tk-partners">
+            <span class="tk-partner-chip">南边文化空间</span>
+            <span class="tk-partner-chip">铅笔芯出版</span>
+            <span class="tk-partner-chip">午后声场</span>
+            <span class="tk-partner-chip">青柠无障碍基金</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;">常见问题</h3>
+          <details class="tk-faq">
+            <summary>如何投稿自己的原创作品？</summary>
+            <p>点击页面上方的“投稿 / 报名”按钮填写作品信息，官方会在五个工作日内回复初审结果。作品需为原创，且未在其他平台独家签约。</p>
+          </details>
+          <details class="tk-faq">
+            <summary>音效素材可以商用吗？</summary>
+            <p>音效素材库提供非商业授权，可免费用于个人二创。如需商业使用，请在投稿页面提交授权申请，官方会提供正式授权说明。</p>
+          </details>
+          <details class="tk-faq">
+            <summary>品牌的作品是否都提供听障友好字幕？</summary>
+            <p>自 2025 年起，所有官方发布的新作均提供听障友好字幕版本，笑声、气声与关键音效均有标注，历史作品正在逐步补全。</p>
+          </details>
+          <details class="tk-faq">
+            <summary>“轻喜剧创作挑战”的评选标准是什么？</summary>
+            <p>评选从三个维度打分：情绪落点是否清晰、角色行为是否自然、完成度是否稳定。技术难度不作为加权项。</p>
+          </details>
+          <details class="tk-faq">
+            <summary>可以申请加入创作者矩阵吗？</summary>
+            <p>可以。官方每季度开放一次申请，需要在站内持续更新作品至少三个月，并通过内容一致性审核。</p>
+          </details>
+          <details class="tk-faq">
+            <summary>品牌是否会举办线下活动？</summary>
+            <p>会。线下公益放映与合作空间见面会的信息，会在企业动态栏目第一时间公布，通常提前两周开放报名。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- S8 页脚 -->
+<footer class="tk-footer">
+  <div class="tk-wrap">
+    <div class="tk-footer-grid">
+      <div>
+        <div class="tk-footer-brand">
+          <span class="tk-brand-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="9" cy="10" r="1.7" fill="#fff"/>
+              <circle cx="15" cy="10" r="1.7" fill="#fff"/>
+              <path d="M8 14.4q4 3.4 8 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="tk-brand-name">挠痒痒tk二次元</span><br>
+            <span class="tk-brand-sub">Official Video Brand</span>
+          </span>
+        </div>
+        <p>
+          挠痒痒tk二次元官方网站。专注治愈系二次元原创视频内容，持续运营原创动画、配音演绎与轻喜剧日常，
+          与创作者共同维护高品质内容生态。
+        </p>
+        <p style="margin:0;">官方网站 · 版权所有 · 持续运营中</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#tk-focus">焦点内容</a></li>
+          <li><a href="#tk-features">专题企划</a></li>
+          <li><a href="#tk-rank">数据榜单</a></li>
+          <li><a href="#tk-analysis">品牌解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#tk-authors">创作者矩阵</a></li>
+          <li><a href="#tk-aux">企业动态</a></li>
+          <li><a href="#tk-aux">帮助中心</a></li>
+          <li><button type="button" data-tk-open="submit" style="color:inherit;font-size:13.2px;">投稿入口</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系</h4>
+        <ul>
+          <li>商务合作：brand@tk-anime.example</li>
+          <li>内容投稿：submit@tk-anime.example</li>
+          <li>媒体联络：press@tk-anime.example</li>
+          <li>工作日 10:00–19:00 回复</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tk-footer-bottom">
+      <span>© 2026 挠痒痒tk二次元 官方网站 · 保留所有权利</span>
+      <span>内容备案号：TK-ANIME-2026-0118 · 持续运营中</span>
+    </div>
+  </div>
+</footer>
+
+<button class="tk-top" id="tk-top-btn" type="button" aria-label="回到页面顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<div class="tk-toast" id="tk-toast" role="status" aria-live="polite"></div>
+
+<div class="tk-modal" id="tk-modal" role="dialog" aria-modal="true" aria-labelledby="tk-modal-title">
+  <div class="tk-modal-box">
+    <button class="tk-modal-close" id="tk-modal-close" type="button" aria-label="关闭弹窗">×</button>
+    <h3 id="tk-modal-title">投稿与报名</h3>
+    <p id="tk-modal-desc">填写作品名称与联系方式，官方将在五个工作日内回复初审结果。</p>
+    <div id="tk-modal-form">
+      <label class="tk-sr-only" for="tk-modal-work">作品名称</label>
+      <input id="tk-modal-work" type="text" placeholder="作品名称 / 投稿主题" autocomplete="off">
+      <label class="tk-sr-only" for="tk-modal-contact">联系方式</label>
+      <input id="tk-modal-contact" type="text" placeholder="邮箱或常用联系方式" autocomplete="off">
+      <label class="tk-sr-only" for="tk-modal-note">作品说明</label>
+      <textarea id="tk-modal-note" rows="3" placeholder="简单介绍你的作品方向与更新计划"></textarea>
+    </div>
+    <div class="tk-modal-foot">
+      <button class="tk-btn tk-btn--ghost tk-btn--sm" type="button" id="tk-modal-cancel">取消</button>
+      <button class="tk-btn tk-btn--primary tk-btn--sm" type="button" id="tk-modal-submit">提交</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('tk-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2400);
+  }
+
+  /* ---------- 移动端导航折叠 ---------- */
+  var burger = document.getElementById('tk-burger');
+  var mobilePanel = document.getElementById('tk-mobile-panel');
+  if(burger && mobilePanel){
+    burger.addEventListener('click', function(){
+      var open = mobilePanel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? '收起导航菜单' : '展开导航菜单');
+    });
+    mobilePanel.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobilePanel.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+        burger.setAttribute('aria-label','展开导航菜单');
+      });
+    });
+  }
+
+  /* ---------- 搜索提示与筛选反馈 ---------- */
+  var searchInput = document.getElementById('tk-search-input');
+  var searchBtn = document.getElementById('tk-search-btn');
+  var searchHint = document.getElementById('tk-search-hint');
+  var searchable = [];
+  document.querySelectorAll('.tk-video-card h3, .tk-list-item h3, .tk-feature-card h3, .tk-author-card h3').forEach(function(el){
+    searchable.push(el.textContent.trim());
+  });
+  function doSearch(){
+    if(!searchInput || !searchHint) return;
+    var q = searchInput.value.trim();
+    if(!q){
+      searchHint.style.display = 'block';
+      searchHint.textContent = '请输入作品、创作者或专题关键词。';
+      return;
+    }
+    var hits = searchable.filter(function(t){ return t.indexOf(q) !== -1; });
+    searchHint.style.display = 'block';
+    if(hits.length){
+      searchHint.textContent = '找到 ' + hits.length + ' 条相关内容：' + hits[0] + (hits.length > 1 ? ' 等' : '');
+    }else{
+      var kw = ['冬日挠痒痒手账','配音室','轻喜剧挑战','分镜','音效'];
+      searchHint.textContent = '暂未直接命中，可试试：' + kw.join('、') + '。';
+    }
+  }
+  if(searchBtn){
+    searchBtn.addEventListener('click', function(e){ e.preventDefault(); doSearch(); });
+  }
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+    searchInput.addEventListener('input', function(){
+      if(searchInput.value.trim() === '' && searchHint){
+        searchHint.style.display = 'none';
+      }
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('.tk-like-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var meta = btn.closest('.tk-video-meta');
+      var numEl = meta ? meta.querySelector('.tk-like-num') : null;
+      var pressed = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+      btn.classList.toggle('liked', !pressed);
+      btn.textContent = pressed ? '点赞' : '已赞';
+      if(numEl){
+        var raw = numEl.getAttribute('data-tk-like') || '0';
+        var val = parseFloat(raw);
+        if(!isNaN(val)){
+          var next = pressed ? Math.max(0, val - 0.1) : val + 0.1;
+          numEl.setAttribute('data-tk-like', next.toFixed(1) + '万');
+          numEl.textContent = '👍 ' + next.toFixed(1) + '万';
+        }
+      }
+      showToast(pressed ? '已取消点赞' : '感谢点赞，已记录你的支持');
+    });
+  });
+
+  document.querySelectorAll('.tk-save-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pressed = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+      btn.classList.toggle('saved', !pressed);
+      btn.textContent = pressed ? '收藏' : '已收藏';
+      showToast(pressed ? '已取消收藏' : '已加入收藏夹');
+    });
+  });
+
+  /* ---------- 复制链接 / 分享 ---------- */
+  document.querySelectorAll('.tk-copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-tk-copy') || '内容';
+      var text = '【挠痒痒tk二次元】' + name;
+      function done(){ showToast('分享文案已复制：' + name); }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+      }else{
+        fallbackCopy(text, done);
+      }
+    });
+  });
+  function fallbackCopy(text, cb){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly','');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      cb();
+    }catch(err){
+      showToast('复制失败，请手动选择文本');
+    }
+  }
+
+  /* ---------- 作者档案弹窗 ---------- */
+  var modal = document.getElementById('tk-modal');
+  var modalTitle = document.getElementById('tk-modal-title');
+  var modalDesc = document.getElementById('tk-modal-desc');
+  var modalFormBox = document.getElementById('tk-modal-form');
+  var modalSubmitBtn = document.getElementById('tk-modal-submit');
+  var modalCancelBtn = document.getElementById('tk-modal-cancel');
+  var modalMode = 'submit';
+
+  function openModal(mode, data){
+    if(!modal) return;
+    modalMode = mode;
+    if(mode === 'author'){
+      modalTitle.textContent = data.name;
+      modalDesc.textContent = data.desc;
+      modalFormBox.style.display = 'none';
+      modalSubmitBtn.textContent = '关闭';
+    }else{
+      modalTitle.textContent = '投稿与报名';
+      modalDesc.textContent = '填写作品名称与联系方式，官方将在五个工作日内回复初审结果。';
+      modalFormBox.style.display = 'block';
+      modalSubmitBtn.textContent = '提交';
+    }
+    modal.classList.add('open');
+  }
+  function closeModal(){
+    if(modal) modal.classList.remove('open');
+  }
+
+  document.querySelectorAll('[data-tk-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var parts = (btn.getAttribute('data-tk-author') || '').split('|');
+      openModal('author', { name: parts[0] || '创作者档案', desc: parts[1] || '' });
+    });
+  });
+  document.querySelectorAll('[data-tk-open="submit"]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal('submit'); });
+  });
+  if(document.getElementById('tk-modal-close')){
+    document.getElementById('tk-modal-close').addEventListener('click', closeModal);
+  }
+  if(modalCancelBtn) modalCancelBtn.addEventListener('click', closeModal);
+  if(modal){
+    modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+  if(modalSubmitBtn){
+    modalSubmitBtn.addEventListener('click', function(){
+      if(modalMode === 'author'){ closeModal(); return; }
+      var work = document.getElementById('tk-modal-work');
+      var contact = document.getElementById('tk-modal-contact');
+      if(!work.value.trim() || !contact.value.trim()){
+        showToast('请填写作品名称与联系方式');
+        return;
+      }
+      closeModal();
+      work.value = ''; contact.value = '';
+      document.getElementById('tk-modal-note').value = '';
+      showToast('提交成功，官方将在五个工作日内回复');
+    });
+  }
+
+  /* ---------- 数字滚动 ---------- */
+  var counted = false;
+  function countUp(){
+    if(counted) return;
+    counted = true;
+    document.querySelectorAll('[data-tk-count]').forEach(function(el){
+      var target = parseInt(el.getAttribute('data-tk-count'), 10);
+      if(isNaN(target)) return;
+      var start = null;
+      var duration = 1300;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString('zh-CN');
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* ---------- 回到顶部 & 数字触发 ---------- */
+  var topBtn = document.getElementById('tk-top-btn');
+  function onScroll(){
+    if(window.scrollY > 520){
+      if(topBtn) topBtn.classList.add('show');
+    }else{
+      if(topBtn) topBtn.classList.remove('show');
+    }
+    if(window.scrollY > 180) countUp();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(topBtn){
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+            </html>
